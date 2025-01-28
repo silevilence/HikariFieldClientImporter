@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+﻿using Playnite.SDK.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,31 +12,31 @@ namespace HikariFieldClientImporter.Entity
         /// <summary>
         /// 不知道是啥
         /// </summary>
-        [JsonProperty("build_id")]
+        [SerializationPropertyName("build_id")]
         public int BuildId { get; set; }
 
         /// <summary>
         /// 版本
         /// </summary>
-        [JsonProperty("version")]
+        [SerializationPropertyName("version")]
         public string Version { get; set; }
 
         /// <summary>
         /// 分支？
         /// </summary>
-        [JsonProperty("depot")]
+        [SerializationPropertyName("depot")]
         public string Depot { get; set; }
 
         /// <summary>
         /// 安装路径
         /// </summary>
-        [JsonProperty("installed_path")]
+        [SerializationPropertyName("installed_path")]
         public string InstalledPath { get; set; }
 
         /// <summary>
         /// 执行文件
         /// </summary>
-        [JsonProperty("exec_file")]
+        [SerializationPropertyName("exec_file")]
         public string ExecFile { get; set; }
     }
 }

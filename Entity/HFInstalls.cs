@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using Playnite.SDK.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace HikariFieldClientImporter.Entity
         /// <summary>
         /// game id str -> game info
         /// </summary>
-        [JsonProperty("installs")]
+        [SerializationPropertyName("installs")]
         public Dictionary<string, SingleGameInfo> Installs { get; set; }
     }
 }

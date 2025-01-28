@@ -10,12 +10,13 @@ namespace HikariFieldClientImporter.Helper
     {
         public static string SerializeObject(object value)
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.Indented);
+            return Playnite.SDK.Data.Serialization.ToJson(value, true);
         }
 
         public static T DeserializeObject<T>(string value)
+            where T : class
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(value);
+            return Playnite.SDK.Data.Serialization.FromJson<T>(value);
         }
     }
 }
