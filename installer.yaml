@@ -6,3 +6,10 @@ Packages:
     PackageUrl: https://github.com/silevilence/HikariFieldClientImporter/releases/download/V1.0/HikariFieldClientImporter_a8050aa6-0fb3-4b28-8bac-491d644e81c7_1_0.pext
     Changelog:
       - 支持导入视觉小说
+  - Version: 1.1
+    RequiredApiVersion: 6.2.0
+    ReleaseDate: 2025-01-28
+    PackageUrl: https://github.com/silevilence/HikariFieldClientImporter/releases/download/V1.1/HikariFieldClientImporter_a8050aa6-0fb3-4b28-8bac-491d644e81c7_1_1.pext
+    Changelog:
+      - 库图标更新为HF客户端图标
+      - 增加打开HF客户端的功能
