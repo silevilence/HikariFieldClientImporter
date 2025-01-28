@@ -66,9 +66,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="addon.yaml" />
     <None Include="extension.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="installer.yaml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
