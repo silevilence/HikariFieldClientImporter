@@ -1,4 +1,5 @@
-﻿using Playnite.SDK;
+﻿using HikariFieldClientImporter.Helper;
+using Playnite.SDK;
 using Playnite.SDK.Data;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,10 @@ namespace HikariFieldClientImporter
 {
     public class HikariFieldClientImporterSettings : ObservableObject
     {
-        private string option1 = string.Empty;
-        private bool option2 = false;
+        private string _clientInstallPath = string.Empty;
         private bool optionThatWontBeSaved = false;
 
-        public string Option1 { get => option1; set => SetValue(ref option1, value); }
-        public bool Option2 { get => option2; set => SetValue(ref option2, value); }
+        public string ClientInstallPath { get => _clientInstallPath; set => SetValue(ref _clientInstallPath, value); }
         // Playnite serializes settings object to a JSON object and saves it as text file.
         // If you want to exclude some property from being saved then use `JsonDontSerialize` ignore attribute.
         [DontSerialize]
@@ -75,6 +74,7 @@ namespace HikariFieldClientImporter
             // Code executed when user decides to confirm changes made since BeginEdit was called.
             // This method should save settings made to Option1 and Option2.
             plugin.SavePluginSettings(Settings);
+            GlobalVars.HFClientInstallPath = Settings.ClientInstallPath;
         }
 
         public bool VerifySettings(out List<string> errors)

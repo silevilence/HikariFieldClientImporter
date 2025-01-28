@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,13 +37,17 @@ namespace HikariFieldClientImporter
         // Implementing Client adds ability to open it via special menu in playnite.
         public override LibraryClient Client { get; } = new HikariFieldClientImporterClient();
 
+        public override string LibraryIcon => GlobalVars.IconPath;
+
         public HikariFieldClientImporter(IPlayniteAPI api) : base(api)
         {
             settings = new HikariFieldClientImporterSettingsViewModel(this);
             Properties = new LibraryPluginProperties
             {
-                HasSettings = false
+                HasSettings = true
             };
+            var sets = LoadPluginSettings<HikariFieldClientImporterSettings>();
+            GlobalVars.HFClientInstallPath = sets?.ClientInstallPath ?? string.Empty;
         }
 
         public override IEnumerable<GameMetadata> GetGames(LibraryGetGamesArgs args)
@@ -234,7 +239,7 @@ namespace HikariFieldClientImporter
 
         public override UserControl GetSettingsView(bool firstRunSettings)
         {
-            return new HikariFieldClientImporterSettingsView(settings);
+            return new HikariFieldClientImporterSettingsView();
         }
     }
 }

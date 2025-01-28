@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Entity\HFInstalls.cs" />
     <Compile Include="Entity\SingleGameInfo.cs" />
+    <Compile Include="Helper\GlobalVars.cs" />
     <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="HikariFieldClientImporterClient.cs" />
     <Compile Include="HikariFieldClientImporter.cs" />

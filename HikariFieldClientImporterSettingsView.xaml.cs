@@ -17,10 +17,9 @@ namespace HikariFieldClientImporter
 {
     public partial class HikariFieldClientImporterSettingsView : UserControl
     {
-        public HikariFieldClientImporterSettingsView(HikariFieldClientImporterSettingsViewModel viewModel)
+        public HikariFieldClientImporterSettingsView()
         {
             InitializeComponent();
-            DataContext = viewModel;
         }
     }
 }

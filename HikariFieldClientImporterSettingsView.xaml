@@ -8,9 +8,7 @@
              d:DesignHeight="400" d:DesignWidth="600"
              d:DataContext="{d:DesignInstance local:HikariFieldClientImporterSettingsViewModel}">
     <StackPanel>
-        <TextBlock Text="Description for Option1:"/>
-        <TextBox Text="{Binding Settings.Option1}"/>
-        <TextBlock Text="Description for Option2:"/>
-        <CheckBox IsChecked="{Binding Settings.Option2}"/>
+        <TextBlock Text="HikariField客户端安装目录："/>
+        <TextBox Text="{Binding Settings.ClientInstallPath, Mode=TwoWay}"/>
     </StackPanel>
 </UserControl>
